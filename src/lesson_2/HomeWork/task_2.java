@@ -1,15 +1,13 @@
 package lesson_2.HomeWork;
 import java.util.Arrays;
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 //        2) Реализуйте алгоритм сортировки пузырьком числового массива, результат после каждой итерации запишите в лог-файл.
 
 public class task_2 {
         public static void main(String[] args) {
            try (FileWriter writer = new FileWriter("log.txt", true)){
-//               Logger logger = new Logger.getLogger(task_2.class.getName());
-//               logger.setLevel(Level.INFO);
+
 
                int[] mas = {11, 3, 14, 16, 7};
 

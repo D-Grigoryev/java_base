@@ -5,11 +5,8 @@ package lesson_2.HomeWork;
 //        Данные для фильтрации приведены ниже в виде строки.
 //        Если значение null, то параметр не должен попадать в запрос.
 //        Параметры для фильтрации: {"name":"Ivanov", "country":"Russia", "city":"Moscow", "age":"null"}
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-import java.net.Socket;
+import org.json.simple.JSONObject;
 
 public class task_1 {
     public static void main(String[] args) {
