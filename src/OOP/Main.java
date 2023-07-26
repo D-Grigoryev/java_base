@@ -5,11 +5,11 @@ import java.util.List;
 import static OOP.Gender.Famale;
 import static OOP.Gender.Male;
 
-//Реализовать, с учетом ооп подхода, приложение.
-//        Для проведения исследований с генеалогическим древом.
-//        Идея: описать некоторое количество компонент, например:
-//        модель человека и дерева
-//        Под “проведением исследования” можно понимать например получение всех детей выбранного человека.
+//        В проекте с гениалогическим древом подумайте и используйте интерфейсы.
+//        Дополнить проект методами записи в файл и чтения из файла.
+//        Для этого создать отдельный класс и реализовать в нем нужные методы.
+//        Для данного класса сделайте интерфейс, который и используйте в своей программе.
+
 public class Main {
     public static void main(String[] args) {
     FamilyTree familyTree = new FamilyTree();
@@ -27,7 +27,13 @@ public class Main {
     familyTree.addFamylytee(human2);
     familyTree.addFamylytee(human3);
 
+    System.out.println("До сохранения: " + familyTree.getInfo());
+    //Сериализация
+    Filehendler filehendler = new Filehendler("save.out");
+    filehendler.saveFile(familyTree);
 
-    System.out.println(familyTree.getInfo());
+    //Десериаллизация
+//    familyTree = (FamilyTree) filehendler.loadFile("save.out");
+//    System.out.println("После сохранение: " + familyTree.getInfo());
     }
 }
