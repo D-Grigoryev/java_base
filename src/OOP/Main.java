@@ -1,39 +1,41 @@
 package OOP;
 
-import java.util.List;
+import OOP.Human.Human;
+import OOP.Service.Service;
 
-import static OOP.Gender.Famale;
-import static OOP.Gender.Male;
+import java.time.LocalDate;
 
-//        В проекте с гениалогическим древом подумайте и используйте интерфейсы.
-//        Дополнить проект методами записи в файл и чтения из файла.
-//        Для этого создать отдельный класс и реализовать в нем нужные методы.
-//        Для данного класса сделайте интерфейс, который и используйте в своей программе.
+import static OOP.Human.Gender.Famale;
+import static OOP.Human.Gender.Male;
 
+//        Продолжаем работать с проектом с семейным деревом.
+//        Реализовать интерфейс Iterable для дерева.
+//        Создать методы сортировки списка людей перед выводом, например по имени или по дате рождения (не менее 2)
+//        Создать пакетную структуру для проекта
 public class Main {
     public static void main(String[] args){
-    FamilyTree familyTree = new FamilyTree();
-    Human human1 = new Human("Олег", "Иванов", "01 мая 1986 года", Male);
-    Human human2 = new Human("Ольга", "Иванова", "01 августа 1994 года", Famale);
-    Human human3 = new Human("Ирина", "Иванова", "15 июля 2010 года", Famale);
+    Service service = new Service();
 
-    human2.addChildren(human3);
-    human1.addChildren(human3);
+    service.addHuman(0,"Олег","Иванов", LocalDate.of(1986,5,23), Male,
+            null, null);
+    service.addHuman(1,"Ольга", "Иванова", LocalDate.of(1994,8,01), Famale,
+            null, null);
+    service.addHuman(2,"Ирина", "Иванова", LocalDate.of(2010,7,15), Famale,
+            service.getHuman(0), service.getHuman(1));
 
-    human3.setFather(human1);
-    human3.setMother(human2);
+     System.out.println(service.getInfo());
+     service.sortByAge();
+     System.out.println(service.getInfo());
+     service.sortByName();
+     System.out.println(service.getInfo());
 
-    familyTree.addFamylytee(human1);
-    familyTree.addFamylytee(human2);
-    familyTree.addFamylytee(human3);
+//    Сериализация
+//    Filehendler filehendler = new Filehendler("save.out");
+//    filehendler.saveFile(service.getFamilyTree());
 
-    System.out.println("До сохранения: " + familyTree.getInfo());
-    //Сериализация
-    Filehendler filehendler = new Filehendler("save.out");
-    filehendler.saveFile(familyTree);
-
-    //Десериаллизация
-//    familyTree = (FamilyTree) filehendler.loadFile("save.out");
-//    System.out.println("После сохранение: " + familyTree.getInfo());
+//    Десериаллизация
+//        Filehendler filehendler1 = new Filehendler("save.out");
+//        service.setFamilyTree ((FamilyTree) filehendler1.loadFile("save.out"));
+//        System.out.println("После сохранение: " + service.getFamilyTree().getInfo());
     }
 }
