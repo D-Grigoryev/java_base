@@ -3,7 +3,7 @@ package OOP;
 
 import java.io.*;
 
-public class Filehendler implements Writeable{
+public class Filehendler implements Writeable {
    private String filename;
 
     public Filehendler(String filename) {

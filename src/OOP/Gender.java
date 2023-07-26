@@ -1,6 +1,6 @@
 package OOP;
 
-public enum Gender {
+public enum Gender{
     Male, Famale;
 
 }

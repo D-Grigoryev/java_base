@@ -11,7 +11,7 @@ import static OOP.Gender.Male;
 //        Для данного класса сделайте интерфейс, который и используйте в своей программе.
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
     FamilyTree familyTree = new FamilyTree();
     Human human1 = new Human("Олег", "Иванов", "01 мая 1986 года", Male);
     Human human2 = new Human("Ольга", "Иванова", "01 августа 1994 года", Famale);
