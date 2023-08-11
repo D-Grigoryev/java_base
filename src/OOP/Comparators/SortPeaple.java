@@ -1,16 +1,17 @@
 package OOP.Comparators;
 
+import OOP.FamilyTree.FamyilyTreeItems;
 import OOP.Human.Human;
 
 
 import java.util.Iterator;
 import java.util.List;
 
-public class SortPeaple implements Iterator<Human> {
+public class SortPeaple <T extends FamyilyTreeItems> implements Iterator<T> {
     int index;
-    List<Human> famylytree;
+    List<T> famylytree;
 
-    public SortPeaple(List<Human> famylytree) {
+    public SortPeaple(List<T> famylytree) {
         this.famylytree= famylytree;
     }
 
@@ -20,7 +21,7 @@ public class SortPeaple implements Iterator<Human> {
     }
 
     @Override
-    public Human next() {
+    public T next() {
         return famylytree.get(index++);
     }
 }

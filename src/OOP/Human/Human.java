@@ -1,12 +1,14 @@
 package OOP.Human;
 
+import OOP.FamilyTree.FamyilyTreeItems;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Serializable{
+public class Human implements Serializable, FamyilyTreeItems {
     private int id = -1;
     private String name, surname;
     private LocalDate birthday;

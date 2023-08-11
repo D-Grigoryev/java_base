@@ -1,19 +1,20 @@
 package OOP.Service;
 
 import OOP.FamilyTree.FamilyTree;
+import OOP.FamilyTree.FamyilyTreeItems;
 import OOP.Filehendler.Filehendler;
 import OOP.Human.Gender;
 import OOP.Human.Human;
 
 import java.time.LocalDate;
 
-public class Service {
+public class Service{
 
     public void setFamilyTree(FamilyTree familyTree) {
         this.familyTree = familyTree;
     }
 
-    private FamilyTree familyTree;
+    private FamilyTree<Human> familyTree;
     private Filehendler filehendler;
 
     public Service() {

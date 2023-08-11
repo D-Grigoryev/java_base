@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree implements Serializable, Iterable<Human>{
-    List<Human> famylytree;
+public class FamilyTree<E> implements Serializable, Iterable<Human>{
+    List<E> famylytree;
 
     public FamilyTree() {
         famylytree = new ArrayList<>();
     }
 
-    public void addFamylytee(Human human) {
-        this.famylytree.add(human);
+    public void addFamylytee(E obj) {
+        this.famylytree.add(obj);
 
 
     }
@@ -26,8 +26,8 @@ public class FamilyTree implements Serializable, Iterable<Human>{
     public String getInfo() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Члены семьи:\n ");
-        for (Human human: famylytree){
-            stringBuilder.append(human);
+        for (E obj: famylytree){
+            stringBuilder.append(obj);
             stringBuilder.append("\n");
             stringBuilder.append("--------------------------");
         }
