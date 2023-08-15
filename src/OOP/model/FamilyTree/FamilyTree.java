@@ -1,16 +1,15 @@
-package OOP.FamilyTree;
+package OOP.model.FamilyTree;
 
-import OOP.Comparators.ComparatorByAge;
-import OOP.Comparators.ComparatorByName;
-import OOP.Human.Human;
-import OOP.Comparators.SortPeaple;
+import OOP.model.Comparators.ComparatorByAge;
+import OOP.model.Comparators.ComparatorByName;
+import OOP.model.Comparators.SortPeaple;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree<E> implements Serializable, Iterable<Human>{
+public class FamilyTree<E extends FamyilyTreeItems<E>> implements Serializable, Iterable<E>{
     List<E> famylytree;
 
     public FamilyTree() {
@@ -34,26 +33,26 @@ public class FamilyTree<E> implements Serializable, Iterable<Human>{
         return stringBuilder.toString();
     }
 
-    public void setMother(Human human) {
+    public void setMother(E human) {
        human.setMother(human);
     }
-    public void setFather(Human human) {
+    public void setFather(E human) {
         human.setFather(human);
     }
-    public void addChildren(Human human) {
+    public void addChildren(E human) {
         human.addChildren(human);
     }
 
     @Override
-    public Iterator<Human> iterator() {
+    public Iterator<E> iterator() {
         return new SortPeaple(famylytree);
     }
     public void sortByName() {
-        famylytree.sort(new ComparatorByName());
+        famylytree.sort(new ComparatorByName<>());
     }
 
     public void sortByAge() {
-        famylytree.sort(new ComparatorByAge());
+        famylytree.sort(new ComparatorByAge<>());
     }
 
 }

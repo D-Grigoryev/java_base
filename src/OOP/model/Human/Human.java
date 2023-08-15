@@ -1,6 +1,6 @@
-package OOP.Human;
+package OOP.model.Human;
 
-import OOP.FamilyTree.FamyilyTreeItems;
+import OOP.model.FamilyTree.FamyilyTreeItems;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -8,7 +8,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Serializable, FamyilyTreeItems {
+public class Human implements Serializable, FamyilyTreeItems<Human> {
     private int id = -1;
     private String name, surname;
     private LocalDate birthday;
@@ -17,17 +17,18 @@ public class Human implements Serializable, FamyilyTreeItems {
     private Gender gender;
 
 
-    public Human(int id, String name, String surname, LocalDate birthday, Gender gender, Human father, Human mother) {
-        this.id = id;
+    public Human(String name, String surname, LocalDate birthday, Gender gender) {
+        this.id = id++;
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
         this.gender = gender;
         this.children = new ArrayList<>();
-        this.father = father;
-        this.mother = mother;
+//        this.father = father;
+//        this.mother = mother;
         id++;
     }
+
 
     public String getName() {
         return name;

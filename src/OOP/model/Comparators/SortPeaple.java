@@ -1,13 +1,12 @@
-package OOP.Comparators;
+package OOP.model.Comparators;
 
-import OOP.FamilyTree.FamyilyTreeItems;
-import OOP.Human.Human;
+import OOP.model.FamilyTree.FamyilyTreeItems;
 
 
 import java.util.Iterator;
 import java.util.List;
 
-public class SortPeaple <T extends FamyilyTreeItems> implements Iterator<T> {
+public class SortPeaple <T extends FamyilyTreeItems<T>> implements Iterator<T> {
     int index;
     List<T> famylytree;
 

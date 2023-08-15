@@ -1,10 +1,9 @@
-package OOP.Service;
+package OOP.model.Service;
 
-import OOP.FamilyTree.FamilyTree;
-import OOP.FamilyTree.FamyilyTreeItems;
-import OOP.Filehendler.Filehendler;
-import OOP.Human.Gender;
-import OOP.Human.Human;
+import OOP.model.FamilyTree.FamilyTree;
+import OOP.model.Filehendler.Filehendler;
+import OOP.model.Human.Gender;
+import OOP.model.Human.Human;
 
 import java.time.LocalDate;
 
@@ -21,9 +20,10 @@ public class Service{
         this.familyTree = new FamilyTree();
     }
 
-    public void addHuman (int id, String name, String surname, LocalDate birthday, Gender gender, Human father, Human mother){
-        familyTree.addFamylytee(new Human(id,name,surname,birthday,gender, father, mother));
+    public void addHuman (String name, String surname, LocalDate birthday, Gender gender){
+        familyTree.addFamylytee(new Human(name,surname,birthday,gender));
     }
+
     public Human getHuman (int id) {
         for (Human h : familyTree) {
             if (h.getId() == id) {
